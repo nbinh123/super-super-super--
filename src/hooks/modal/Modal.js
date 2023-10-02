@@ -4,21 +4,12 @@ import styles from "./modal.module.scss"
 function Modal({
     title = 'Thông báo',
     content = 'Đây là dòng nội dung của modal',
-    onAccept = () => {},
+    onAccept = () => { },
     onReject = () => {
-        
+
     },
     showModal = false
 }) {
-
-    const accept = () => {
-        onAccept()
-    }
-    const reject = () => {
-        onReject()
-    }
-
-
     return (
         <div className={styles.container} style={{
             width: "100%",
@@ -34,10 +25,10 @@ function Modal({
                 </div>
                 <div className={styles.chooses}>
                     <div className={styles.acp}>
-                        <p onClick={accept}>Đồng ý</p>
+                        <p onClick={onAccept}>Đồng ý</p>
                     </div>
                     <div className={styles.rej}>
-                        <p onClick={reject}>Từ chối</p>
+                        <p onClick={onReject}>Từ chối</p>
                     </div>
                 </div>
             </div>

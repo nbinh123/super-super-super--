@@ -30,7 +30,7 @@ async function connectDB() {
             useUnifiedTopology: true,
 
         });
-        console.log("Connect database Successfully")
+        // console.log("Connect database Successfully")
     } catch (error) {
         console.log("Connect blog Failure!")
     }
