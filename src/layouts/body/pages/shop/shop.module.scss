@@ -1,0 +1,119 @@
+.container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 5%;
+    .title{
+        position: relative;
+        width: 99%;
+        p{
+            color: white;
+            text-shadow: 1px 0px 3px #b5fafa;
+            font-size: 30px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+    }
+    .typeTagWrapper{
+        border: 1px solid white;
+        width: 91.5%;
+        display: flex;
+        flex-wrap: wrap;
+        .typeTag{
+            width: 24.885%;
+            border: 1px solid white;
+            padding: 1% 0;
+            cursor: pointer;
+            p{
+                color: white;
+                text-shadow: 1px 0px 3px #b5fafa;
+                font-size: 17px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                margin: 0;
+            }
+        }
+    }
+    .contents{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        width: 100%;
+        margin: 0;
+        .productTag{
+            position: relative;
+            width: 25%;
+            aspect-ratio: 3.2;
+            border: 1px solid white;
+            margin: 1% 0;
+            display: flex;
+            .favourite{
+                position: absolute;
+                line-height: 0;
+                margin: 0;
+                top: 0;
+                right: 0;
+                cursor: pointer;
+                padding: 2%;
+                z-index: 999;
+            }
+            
+            .image{
+                img{
+                    height: 100%;
+                    aspect-ratio: 1;
+                    border-top-left-radius: 15%;
+                }
+            }
+            .info{
+                flex: 5;
+                p{
+                    margin: 0;
+                    text-align: left;
+                    padding: 1.5% 6%;
+                    color: whitesmoke;
+                    text-shadow: 1px 0 3px #88ffff;
+                }
+                .price{
+                    padding: 0 5%;
+                }
+                .name{
+                    white-space: nowrap;
+                }
+                .quantity{
+                    font-size: 12px;
+                    padding: 0 5%;
+                    // text-decoration: underline;
+                }
+                .add{
+                    width: 100%;
+                    margin: 2% 6%;
+                    display: flex;
+                    justify-content: left;
+                    button{
+                        cursor: pointer;
+                        background-color: transparent;
+                        font-size: 11.5px;
+                        padding: 2% 3%;
+                        border: 1px solid white;
+                        box-shadow: 1px 0 3px #b5fafa;
+                        color: #c4c4fa;
+                        &:hover{
+                            animation: hoverButtonEffect 1s 1 cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+                        }
+                    }
+                    @keyframes hoverButtonEffect {
+                        from{
+                            background-color: transparent;
+                        }
+                        to{
+                            background-color: #c4c4fa;
+                            color: black;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

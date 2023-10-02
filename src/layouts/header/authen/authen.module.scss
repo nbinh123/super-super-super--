@@ -1,0 +1,91 @@
+.container {
+    flex: 1.5;
+
+    .authen {
+        display: flex;
+        padding: 5px;
+
+        div {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        a {
+            width: 80%;
+            border: 0.5px solid white;
+            padding: 2.5% 0;
+            color: white;
+        }
+    }
+
+    .tool {
+        display: flex;
+        justify-content: space-around;
+        padding: 0 10%;
+
+        .toolTag {
+            border: 1px solid white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 45px;
+            height: 45px;
+            cursor: pointer;
+            border-radius: 50%;
+            img{
+                height: 100%;
+                aspect-ratio: 1;
+            }
+            .icon {
+                width: 100%;
+                font-size: 16px;
+                text-shadow: 1px 2px 3px #b5fafa;
+                border-radius: 50%;
+            }
+            &:hover{
+                animation: hov 1s 1 cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+            }
+            @keyframes hov {
+                from{
+                    background-color: transparent;
+                    color: white;
+                }
+                to{
+                    background-color: whitesmoke;
+                    color: black;
+                }
+            }
+        }
+    }
+
+    .userWrapper{
+        background-color: white;
+        border: 1px solid black;
+        color: black;
+        // display: flex;
+        // flex-direction: column;
+        overflow: hidden;
+        width: 222px;
+        border-radius: 5px;
+        .userToolTag{
+            text-align: left;
+            padding: 0 10%;
+            border: 1px solid navajowhite;
+            cursor: pointer;
+            &:hover{
+                animation: hov 0.5s 1 cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+            }
+        }
+        @keyframes hov {
+            from{
+                background-color: transparent;
+            }
+            to{
+                background-color: antiquewhite;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,99 @@
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2% 0;
+
+    .avatar {
+        width: 13%;
+        border: 1px solid white;
+        aspect-ratio: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+
+        img {
+            width: 100%;
+            aspect-ratio: 1;
+            overflow: hidden;
+            border-radius: 50%;
+        }
+
+        .avatarOptions {
+            background-color: white;
+            width: 200px;
+
+            p {
+                margin: 0;
+            }
+
+            a {
+                padding: 0;
+                margin: 0;
+            }
+
+            .watch {
+                animation: flip 0.8s 1 cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+                border: 1px solid black;
+                padding: 5% 5%;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: antiquewhite;
+                }
+            }
+
+            .edit {
+                animation: flip 0.8s 1 cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+                border: 1px solid black;
+                padding: 5% 5%;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: antiquewhite;
+                }
+            }
+        }
+
+        @keyframes flip {
+            from {
+                transform: rotateY(90deg);
+            }
+
+            to {
+                transform: rotateY(0);
+            }
+        }
+    }
+
+    .contents {
+        .name {
+            margin: 5% 0;
+            display: flex;
+            position: relative;
+
+            input {
+                color: #b5faff;
+                font-size: 19px;
+                font-weight: 700;
+                text-align: center;
+                outline: none;
+                background: transparent;
+                border: 0;
+                border-bottom: 1px solid black;
+
+            }
+
+            .pen {
+                position: absolute;
+                right: 0;
+                cursor: pointer;
+                padding: 1.7%;
+                font-size: 15px;
+                color: antiquewhite;
+            }
+        }
+    }
+}

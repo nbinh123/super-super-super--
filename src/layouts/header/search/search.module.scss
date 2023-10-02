@@ -1,0 +1,116 @@
+.container{
+    flex: 3;
+    height: 100%;
+    display: flex;
+    input{
+        flex: 10;
+        padding: 11px 10px;
+        outline: none;
+        font-size: 14px;
+        border-radius: 0;
+        border: 0;
+    }
+    button{
+        flex: 1.5;
+        background-color: white;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        border: 0;
+        border-left: 1px solid black;
+        padding: 5px;
+        cursor: pointer;
+        position: relative;
+        z-index: 1;
+        &:hover{
+            animation: opacity 1s 1 cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+        }
+    }
+}
+.filter{
+    background-color: white;
+    width: 97.1px;
+    border: 1px solid black;
+    animation: ShowFilter 0.8s 1 cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    z-index: -1;
+    outline: none;
+    overflow: hidden;
+    .select{
+        width: 100%;
+        color: black;
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        input{
+            flex: 1;
+            margin-right: 0;
+            font-size: 13px;
+        }
+        p{
+            flex: 3;
+            font-size: 12px;
+            text-align: left;
+        }
+    }
+}
+
+.searchValue{
+    background-color: white;
+    width: 600.45px;
+    color: black;
+    .search_tag{
+        border: 1px solid black;
+        display: flex;
+        align-items: center;
+        padding: 1.5% 0;
+        cursor: pointer;
+        p{
+            margin: 0;
+        }
+        .avatar{
+            flex: 2;
+        }
+        .info{
+            flex: 10;
+            .phone{
+                font-weight: 700;
+            }
+        }
+        img{
+            height: 40px;
+            aspect-ratio: 1;        
+        }
+        &:hover{
+            animation: onHover 0.5s 1 cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+        }
+    }
+}
+
+@keyframes onHover {
+    from{
+        background-color: white;
+    }
+    to{
+        background-color: antiquewhite;
+    }
+}
+
+@keyframes opacity {
+    from{
+        background-color: white;
+    }
+    to{
+        background-color: antiquewhite;
+    }
+}
+@keyframes ShowFilter {
+    from{
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
