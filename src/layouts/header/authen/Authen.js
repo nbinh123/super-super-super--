@@ -25,7 +25,7 @@ function Authen() {
     const tools = [
         {
             icon: <FontAwesomeIcon className={styles.icon} icon={faCartShopping} />,
-            url: '/user/cart'
+            url: '/shop/cart'
         },
         {
             icon: <FontAwesomeIcon className={styles.icon} icon={faBell} />,

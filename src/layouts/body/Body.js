@@ -10,7 +10,6 @@ import GlobalContext from "../../hooks/globalContexts/GlobalContext";
 import Favourite from "./pages/favourite/Favourite";
 import Info from "./pages/info/Info";
 import Settings from "./pages/settings/Settings";
-import Cart from "./pages/cart/Cart";
 import Shop from "./pages/shop/Shop";
 import Bill from "./pages/shop/bill/Bill";
 
@@ -27,8 +26,7 @@ function Body() {
                 <Route path="/user">
                     <Route path="favourite" element={<Favourite />} />
                     <Route path="informations" element={<Info />} />
-                    <Route path="settings" element={<Settings />} />
-                    <Route path="cart" element={<Cart />} />
+                    <Route path="settings" element={<Settings />} />          
                 </Route>
                 <Route path="/shop">
                     <Route path="" element={<Shop/>}/>

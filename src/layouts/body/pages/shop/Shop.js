@@ -46,6 +46,7 @@ function Shop() {
         getAPI(`http://${IP}:5000/api/product/get`, {}, null, (response) => {
             setListProduct(response)
             setFilteredProduct(response)
+            console.log(response)
         })
     }, [])
     useEffect(() => {
@@ -105,6 +106,21 @@ function Shop() {
                 console.log(response.cart)
             })
         }
+        const onPullToCart = () => {
+            // gọi API xóa sản phẩm vào giỏ hàng
+            postAPI(`http://${IP}:5000/api/product/pull/cart`, {
+                userId: userData?._id,
+                productId: id,
+                nameProduct: name,
+                price: price,
+                promote: promote
+            }, (response) => {
+                setUserData(response)
+                console.log(response.cart)
+            })
+
+            console.log('xóa khỏi giỏ hàng');
+        }
 
 
         return (
@@ -120,7 +136,7 @@ function Shop() {
                         <button style={{
                             backgroundColor: (isOnCart ? '#c4c4fa' : 'transparent'),
                             color: (isOnCart ? 'black' : '#c4c4fa')
-                        }} onClick={onPushToCart}>{isOnCart ? 'Đã thêm vào giỏ hàng' : 'Thêm vào giỏ hàng'}</button>
+                        }} onClick={!isOnCart ? onPushToCart : onPullToCart}>{isOnCart ? 'Đã thêm vào giỏ hàng' : 'Thêm vào giỏ hàng'}</button>
                     </div>
                 </div>
                 <div className={styles.favourite} onClick={onToogleFavourite}>
@@ -164,7 +180,7 @@ function Shop() {
                     return <TypeTag key={item.name} typed={item.type} name={item.name} />
                 }))}
                 <div onClick={() => navigate('/shop/cart')} className={styles.typeTag}>
-                    <p>Trang thanh toán <FontAwesomeIcon icon={faAngleDoubleRight}/></p>
+                    <p>Trang thanh toán <FontAwesomeIcon icon={faAngleDoubleRight} /></p>
                 </div>
             </div>
             <div className={styles.contents}>

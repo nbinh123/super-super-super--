@@ -95,7 +95,7 @@ function Bill() {
                     <br />
                     {productPromote !== 0 ? <p className={styles.promote}>{(quantity * productInfo?.price).toLocaleString('vi-VN')}đ</p> : ''}
                     <p>{((quantity * productInfo?.price) * ((100 - productPromote) / 100)).toLocaleString('vi-VN')}đ {productPromote !== 0 ? <span>{`(-${productPromote}%)`}</span> : ''}</p>
-                    {quantity !== quantities ? (
+                    {quantity != quantities ? (
                         <div onClick={onUpdateQuantity} className={styles.submit}>
                             <p>Xác nhận sản phẩm</p>
                         </div>
@@ -127,8 +127,12 @@ function Bill() {
                                 <div tabIndex={-1} {...attr} className={styles.promoteCodeWrapper}>
                                     {userData?.promoteCodes.map((item, index) => {
                                         return (
-                                            <div className={styles.code} key={index} onClick={() => setPromote(item.discount)}>
-                                                <p>Mã giảm giá {item?.discount}%</p>
+                                            <div style={{
+                                                backgroundColor: (promote === item.discount ? 'antiquewhite' : 'transparent')
+                                            }} className={styles.code} key={index} onClick={() => setPromote(item.discount)}>
+                                                <p style={{
+                                                    color: (promote === item.discount ? 'black' : 'white')
+                                                }}>Mã giảm giá {item?.discount}%</p>
                                             </div>
                                         )
                                     })}
